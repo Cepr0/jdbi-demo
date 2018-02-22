@@ -1,0 +1,49 @@
+<configuration>
+
+    <property scope="context" name="COLORIZER_COLORS" value="red@,yellow@,black@,white@,green@" />
+    <conversionRule conversionWord="clr" converterClass="org.tuxdude.logback.extensions.LogColorizer" />
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%clr(%date{HH:mm:ss.SSS}) %white([%-10.10thread]) %clr(%-5level) %white(%30.30logger{29}:%4line) %clr(%msg%n)</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <logger name="io.github.cepr0.demo" level="debug" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="org.hibernate.engine.transaction" level="debug" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="jdbc.sqlonly" level="info" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="jdbc.resultsettable" level="info" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="jdbc.sqltiming" level="off" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="jdbc.audit" level="off" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="jdbc.resultset" level="off" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <logger name="jdbc.connection" level="off" additivity="false">
+        <appender-ref ref="console"/>
+    </logger>
+
+    <root level="error">
+        <appender-ref ref="console"/>
+    </root>
+
+</configuration>
