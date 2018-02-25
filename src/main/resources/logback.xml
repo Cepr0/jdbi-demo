@@ -5,7 +5,8 @@
 
     <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%clr(%date{HH:mm:ss.SSS}) %white([%-10.10thread]) %clr(%-5level) %white(%30.30logger{29}:%4line) %clr(%msg%n)</pattern>
+            <!--<pattern>%date{HH:mm:ss.SSS} [%-10.10thread] %-5level %30.30logger{29}:%-4line %msg%n</pattern>-->
+            <pattern>%clr(%date{HH:mm:ss.SSS}) %white([%-10.10thread]) %clr(%-5level) %white(%30.30logger{29}:%-4line) %clr(%msg%n)</pattern>
             <charset>utf8</charset>
         </encoder>
     </appender>
